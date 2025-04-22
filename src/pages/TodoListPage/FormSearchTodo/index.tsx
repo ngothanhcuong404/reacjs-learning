@@ -38,7 +38,7 @@ export const FormSearchTodo: FC<Props> = ({ todos, setTodos }) => {
 
     return (
         <div className="flex flex-col gap-4 w-full mb-4">
-            <h1 className="text-2xl font-bold">Search Todo</h1>
+            <h1 className="text-2xl font-bold"> Todo</h1>
             <form className="flex flex-col gap-4 w-full ">
                 <input type="text" placeholder="Search..." onFocus={handleFocus} value={search} onChange={handleSearch} className="border border-gray-300 p-2 rounded" />
             </form>
