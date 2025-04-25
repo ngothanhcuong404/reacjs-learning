@@ -1,5 +1,5 @@
 import { M_Todo } from "../../types/todo";
-import { Action } from "./Action";
+import { Action } from "../TodoListReducerPage/Action";
 export const todoReducer = (state: M_Todo[], action: Action): M_Todo[] => {
     switch (action.type) {
       case "ADD_TODO":
