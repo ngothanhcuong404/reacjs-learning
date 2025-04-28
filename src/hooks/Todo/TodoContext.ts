@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
-import { M_Todo } from "../../types/todo";
-import { Action } from "../TodoListReducerPage/Action";
+import { M_Todo } from "../../../types/todo";
+import { Action } from "../../TodoListReducerPage/Action";
 
 type TodoContextType = {
   todos: M_Todo[];

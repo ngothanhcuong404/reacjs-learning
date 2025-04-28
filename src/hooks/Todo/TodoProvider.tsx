@@ -1,7 +1,7 @@
 import { FC, useReducer, useEffect } from "react";
 import { TodoContext } from "./TodoContext";
-import { todoReducer } from "../utils/TodoReducer";
-// import { M_Todo } from "../types/todo";
+import { todoReducer } from "../../pages/utils/TodoReducer";
+
 
 const TodoProvider: FC<{ children: React.ReactNode }> = ({ children }) => {
     const [todos, dispatch] = useReducer(todoReducer, [], () => {
