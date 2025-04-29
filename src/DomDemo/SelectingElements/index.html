@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Section 2. Selecting elements</h1>
+    <input id="username" name="username" class="input" />
+    <p class="info">Info 1</p>
+    <p class="info">Info 2</p>
+
+
+</body>
+<script>
+    console.log(document.getElementById("username"));
+    console.log(document.getElementsByName("username"));
+    console.log(document.getElementsByTagName("p"));
+    console.log(document.getElementsByClassName("info"));
+    console.log(document.querySelector(".info"));
+</script>
+
+</html>

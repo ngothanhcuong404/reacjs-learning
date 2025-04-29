@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Section 5: Working with Attributes</h1>
+
+    <img id="image" src="https://placehold.co/400" alt="original logo">
+ 
+
+
+</body>
+  
+<script>
+    const img = document.getElementById("image");
+
+    img.setAttribute("alt", "New Alt Text");
+
+   
+    console.log("alt mới:", img.getAttribute("alt")); 
+
+  
+    console.log("Có thuộc tính src?", img.hasAttribute("src")); 
+    console.log("Có thuộc tính title?", img.hasAttribute("title"));
+
+    img.removeAttribute("alt");
+    console.log("alt sau khi xóa:", img.getAttribute("alt")); 
+
+   
+
+ 
+  </script>
+</html>

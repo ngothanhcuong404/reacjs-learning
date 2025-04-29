@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Document</title>
+    <style>
+        #scroll-box {
+            height: 120px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+
+        #scroll-target {
+            margin-top: 300px;
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Section 7: JavaScript Events</h1>
+
+ 
+    <button onclick="alert('Inline Event')">Click (onclick)</button>
+    <button id="btn1">Click me (property)</button>
+    <button id="btn2">Click me (addEventListener)</button>
+
+    <hr>
+
+    <img id="imgLoad" src="https://placehold.co/600x400" alt="placeholder">
+
+    <hr>
+
+ 
+    <input id="keyboard" placeholder="Type here..." />
+    <input id="focusBox" placeholder="Focus me" />
+
+    <hr>
+
+    <div id="scroll-box">
+        <div id="scroll-target">Scroll Target</div>
+    </div>
+
+    <hr>
+
+  
+    <a href="#demoHash">Change hash</a>
+    <div id="delegate-container">
+        <button class="child-btn">Child Button 1</button>
+        <button class="child-btn">Child Button 2</button>
+    </div>
+
+    <hr>
+   
+    <button id="customBtn">Trigger Custom Event</button>
+
+    <hr>
+
+    <p id="observeTarget">Watch me change</p>
+    <button onclick="document.getElementById('observeTarget').textContent = 'Changed text!'">Change Text</button>
+
+
+</body>
+
+<script>
+        
+    document.getElementById("btn1").onclick = function () {
+        alert("property");
+    };
+
+    document.getElementById("btn2").addEventListener("click", () => {
+        alert("addEventListener");
+    });
+
+
+    window.addEventListener("load", () => {
+        console.log("Window fully loaded");
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        console.log("DOM fully loaded");
+    });
+
+    document.getElementById("imgLoad").addEventListener("load", () => {
+        console.log("Image has loaded");
+    });
+
+   
+    window.addEventListener("beforeunload", (e) => {
+        e.preventDefault();
+        e.returnValue = ''; 
+    });
+
+    window.addEventListener("unload", () => {
+        console.log(" unloaded");
+    });
+
+   
+    document.getElementById("btn1").addEventListener("dblclick", () => {
+        console.log("Double clicked!");
+    });
+
+    document.getElementById("keyboard").addEventListener("keydown", (e) => {
+        console.log("Key Down:", e.key);
+    });
+
+    document.getElementById("keyboard").addEventListener("keyup", (e) => {
+        console.log("Key Up:", e.key);
+    });
+
+
+    const scrollBox = document.getElementById("scroll-box");
+    scrollBox.addEventListener("scroll", () => {
+        console.log("Scrolling");
+    });
+
+    
+    setTimeout(() => {
+        document.getElementById("scroll-target").scrollIntoView({ behavior: "smooth" });
+    }, 1000);
+
+ 
+    const focusBox = document.getElementById("focusBox");
+    focusBox.addEventListener("focus", () => {
+        console.log("Input focused");
+    });
+
+    focusBox.addEventListener("blur", () => {
+        console.log("Input lost focus");
+    });
+
+ 
+    window.addEventListener("hashchange", () => {
+        console.log("Hash changed to:", location.hash);
+    });
+
+   
+    document.getElementById("delegate-container").addEventListener("click", (e) => {
+        if (e.target.classList.contains("child-btn")) {
+            console.log("Delegated Click:", e.target.textContent);
+        }
+    });
+
+   
+    const customBtn = document.getElementById("customBtn");
+
+    customBtn.addEventListener("myEvent", () => {
+        alert("Custom Event Triggered!");
+    });
+
+    customBtn.addEventListener("click", () => {
+        const evt = new Event("myEvent");
+        customBtn.dispatchEvent(evt);
+    });
+
+  
+    const target = document.getElementById("observeTarget");
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach(m => {
+            console.log("Mutation observed:", m);
+        });
+    });
+
+    observer.observe(target, { childList: true });
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Section 4: Manipulating Elements</h1>
+    <div id="list"></div>
+
+
+</body>
+<script>
+    const div = document.getElementById("list");
+    const item = document.createElement("p");
+    item.textContent = "TextContext";
+    div.appendChild(item);
+  
+    
+    div.innerHTML += "<p>Using innerHTML</p>";
+  
+  
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < 3; i++) {
+      const li = document.createElement("li");
+      li.textContent = `Item ${i+1}`;
+      frag.appendChild(li);
+    }
+    div.appendChild(frag);
+  
+  
+    div.insertAdjacentHTML("beforeend", "<p>  insertAdjacentHTML</p>");
+  </script>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" name="username" placeholder="Điền tên " />
+        <br><br>
+      
+        <label><input type="radio" name="gender" value="Nam" checked> nam</label>
+        <label><input type="radio" name="gender" value="Nữ"> nữ</label>
+        <br><br>
+      
+        <label><input type="checkbox" id="Dongy" checked>Đồng ý</label>
+        <br><br>
+      
+        <select id="options">
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+        <br><br>
+      
+        <button type="submit">Submit</button>
+      </form>
+      
+      <script>
+        const form = document.getElementById("myForm");
+      
+      
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const username = form.username.value;
+          if (!username) {
+            alert("Username is required!");
+            return;
+          }
+      
+          const gender = form.gender.value;
+          const isSubscribed = document.getElementById("Dongy").checked;
+      
+          alert(`Hoàn Thành`);
+        });
+      
+      
+        const select = document.getElementById("options");
+        const opt = document.createElement("option");
+        opt.value = "3";
+        opt.text = "3";
+        select.appendChild(opt);
+      
+     
+        [...select.options].forEach(opt => {
+          if (opt.value === "1") opt.remove();
+        });
+      
+        
+        form.username.addEventListener("input", e => {
+          console.log("Tên :", e.target.value);
+        });
+      
+       
+        select.addEventListener("change", e => {
+          console.log(" số:", e.target.value);
+        });
+     
+        const checkbox = document.getElementById("Dongy");
+        checkbox.addEventListener("change", e => {
+          console.log("ý kiến:", e.target.checked);
+        });
+      
+     
+        const radios = form.querySelectorAll("input[name='gender']");
+        radios.forEach(radio => {
+          radio.addEventListener("change", e => {
+            if (e.target.checked) {
+              console.log("Giới Tính :", e.target.value);
+            }
+          });
+        });
+      </script>
+</body>
+</html>

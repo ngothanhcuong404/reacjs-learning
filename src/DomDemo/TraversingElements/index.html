@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Section 3: Traversing Elements</h1>
+    <div id="container">
+        <p id="child1">First</p>
+        <p id="child2">Second</p>
+    </div>
+
+
+</body>
+<script>
+    const child = document.getElementById("child1");
+    console.log(child.parentElement);
+    console.log(child.parentElement.children);
+    console.log(child.nextElementSibling); // sibling
+</script>
+
+</html>

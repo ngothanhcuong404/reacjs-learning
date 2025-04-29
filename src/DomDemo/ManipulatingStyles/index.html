@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .square {
+            border: 2px solid black;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Section 6: Manipulating Element’s Styles</h1>
+    <div id="box" class="square red" style="width: 100px; height: 100px;"></div>
+
+
+</body>
+<script>
+    const box = document.getElementById("box");
+
+    console.log("Inline style width:", box.style.width);
+    box.style.borderRadius = "10px";
+    box.style.border = "3px dashed green";
+
+    const computed = getComputedStyle(box);
+    console.log("Computed height:", computed.height);
+
+    console.log("className:", box.className);
+
+    box.classList.add("blue");
+    box.classList.remove("red");
+    console.log("Contains 'blue'?", box.classList.contains("blue"));
+
+    console.log("Computed width:", computed.width);
+    console.log("Computed height:", computed.height);
+</script>
+
+</html>
