@@ -5,6 +5,8 @@ import TodoListPage from './pages/TodoListPage'
 import About from './pages/About'
 import CheckSizePage from './pages/CheckSizePage'
 import TodoListReducerPage from './pages/TodoListReducerPage'
+import TodoListZustandPage from './pages/TodoListZustandPage'
+import ProfilePage from './pages/ProfilePage'
 import TodoProvider from './hooks/Todo/TodoProvider'
 import WikiSearchPage from './pages/WikiSearchPage'
 import UserProvider from './hooks/User/UserProvider'
@@ -25,8 +27,11 @@ function App() {
             <Link to="/about">About</Link>
             <Link to="/check-size">Check Size</Link>
             <Link to="/todo-list-basic">Todo List basic</Link>
+            <Link to="/todo-list-zustand">Todo List Zustand</Link>
+            <Link to="/profile">Profile</Link>
             <Link to="/wiki-search">Wiki Search</Link>
             <UsersPage></UsersPage>
+
           </nav>
 
           <Routes>
@@ -36,6 +41,8 @@ function App() {
 
             <Route path="/login" element={<LoginPage />} />
             <Route path="/todo-list-basic" element={<TodoListPage />} />
+            <Route path="/todo-list-zustand" element={<TodoListZustandPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
             <Route path="/wiki-search" element={<WikiSearchPage />} />
 
             <Route path="*" element={<h1>404 Not Found</h1>} />

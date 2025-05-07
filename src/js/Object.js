@@ -53,3 +53,19 @@ Animal.prototype.speak = function() {
 let dog = new Animal("Dog"); // dog có thể gọi method speak qua prototype trung
 dog.speak(); 
 
+
+//method 
+const user = {name : 'cuong' , age : 21};
+const user2 = {name : 'cuong2' , age : 21};
+const merge = Object.assign(user,user2); // gộp 2 object thành 1
+console.log(merge); // gộp user2 vào user
+console.log(Object.values(user)); // trả về mảng các giá trị của object
+console.log(Object.keys(user)); // trả về mảng các key của object
+console.log(Object.entries(user)); // trả về mảng các cặp key-value của object
+// dùng Object để so sánh 2 giá trị so sánh giống ===
+console.log(Object.is(NaN, NaN));     //  true
+console.log(Object.is(+0, -0));       //  false
+console.log(Object.is(5, 5));         //  true
+
+
+// Object.groupBy() node không hỗ trợ 
