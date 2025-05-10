@@ -13,6 +13,7 @@ import UserProvider from './hooks/User/UserProvider'
 
 import LoginPage from './pages/LoginPage'
 import UsersPage from './component/UserStatus'
+import TsDemoPage from './pages/TsDemoPage'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
             <Link to="/profile">Profile</Link>
             <Link to="/wiki-search">Wiki Search</Link>
             <UsersPage></UsersPage>
+            <Link to="/demots">Typescript Demo</Link>
 
           </nav>
 
@@ -44,6 +46,7 @@ function App() {
             <Route path="/todo-list-zustand" element={<TodoListZustandPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/wiki-search" element={<WikiSearchPage />} />
+            <Route path="/demots" element={<TsDemoPage />} />
 
             <Route path="*" element={<h1>404 Not Found</h1>} />
           </Routes>
